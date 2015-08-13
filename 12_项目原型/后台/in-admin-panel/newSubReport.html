@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>烟草物流后台系统</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="clockp.js"></script>
+<script type="text/javascript" src="clockh.js"></script> 
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="ddaccordion.js"></script>
+<script type="text/javascript">
+ddaccordion.init({
+	headerclass: "submenuheader", //Shared CSS class name of headers group
+	contentclass: "submenu", //Shared CSS class name of contents group
+	revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
+	defaultexpanded: [], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+	onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: true, //persist state of opened contents within browser session?
+	toggleclass: ["", ""], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["suffix", "<img src='images/plus.gif' class='statusicon' />", "<img src='images/minus.gif' class='statusicon' />"], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+	oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+</script>
+
+<script type="text/javascript" src="jconfirmaction.jquery.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+		$('.ask').jConfirmAction();
+	});
+	
+</script>
+
+<script language="javascript" type="text/javascript" src="niceforms.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="niceforms-default.css" />
+
+</head>
+<body>
+<div id="main_container">
+
+	<div class="header">
+    <div class="logo"><a href="#"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>
+    
+    <div class="right_header">欢迎 管理员 <a href="#"></a> | <a href="#" class="messages">(3) 消息</a> | <a href="#" class="logout">注销</a></div>
+    <div id="clock_a"></div>
+    </div>
+    
+    <div class="main_content">
+    
+                    <div class="menu">
+                    <ul>
+                    <li><a class="current" href="index.html">后台管理 </a></li>
+                    
+      </div> 
+                    
+                    
+                    
+                    
+    <div class="center_content">  
+    
+    
+    
+    <div class="left_content">
+    
+    		<div class="sidebar_search">
+            <form>
+              <input type="text" name="Input" class="search_input" value="搜索" onclick="this.value=''" />
+              <input type="image" class="search_submit" src="images/search.png" />
+            </form>            
+            </div>
+    
+        <div class="sidebarmenu">
+            
+                <a class="menuitem submenuheader" href="">车辆管理</a>
+                <div class="submenu">
+                    <ul>
+                    <li><a href="carInfo.html">管理车辆信息</a></li>
+                    <li><a href="searchCarInfo.html">查询车辆信息</a></li>
+          
+                    </ul>
+                </div>
+                <a class="menuitem submenuheader" href="" >配送点管理</a>
+                <div class="submenu">
+                    <ul>
+                    <li><a href="stationInfo.html">管理配送点信息</a></li>
+                    <li><a href="searchStationInfo.html">查询配送点信息</a></li>
+                    </ul>
+                </div>
+                <a class="menuitem submenuheader" href="">配送范围管理</a>
+                <div class="submenu">
+                    <ul>
+                    <li><a href="scope.html">查看配送范围信息</a></li>
+                    <li><a href="scopeInfo.html">管理配送范围</a></li>
+                    </ul>
+                </div>
+				 <a class="menuitem submenuheader" href="">配送管理</a>
+                <div class="submenu">
+                    <ul>
+                    <li><a href="newReceipt1.html">生成交接单</a></li>
+                    <li><a href="receiptInfo.html">管理交接单</a></li>
+                    <li><a href="searchReceipt.html">查询交接单</a></li>
+                    </ul>
+                </div>
+				 <a class="menuitem submenuheader" href="">订单管理</a>
+                <div class="submenu">
+                    <ul>
+                    <li><a href="newOrder.html">生成订单</a></li>
+                    <li><a href="orderInfo.html">管理订单</a></li>
+                    <li><a href="searchOrder.html">查询订单</a></li>
+                    </ul>
+                </div>
+            <a class="menuitem submenuheader" href="">报表管理</a>
+			 <div class="submenu">
+                    <ul>
+                    <li><a href="newReport.html">生成省公司报表</a></li>
+                    <li><a href="reportInfo.html">查询省公司报表</a></li>
+                    <li><a href="newSubReport.html">生成配送点报表</a></li>
+                    <li><a href="subReportInfo.html">查询配送点报表</a></li>
+                    </ul>
+          </div>
+			
+             <a class="menuitem submenuheader" href="">用户管理</a>
+			 <div class="submenu">
+                    <ul>
+                    <li><a href="adminInfo.html">管理客户</a></li>
+                    <li><a href="customerInfo.html">管理员工</a></li>
+                    </ul>
+          </div>        
+	    </div>
+            
+            
+      </div>
+    <div class="right_content">            
+        
+         <h2>配送点报表</h2> 
+         <div class="form">
+         <form action="" method="post" class="niceform">
+         
+               <fieldset>
+                     <dl>
+                       <dt><label for="comments"> 选择配送点：</label></dt>
+                        <dd><select size="1" name="gender" id="">
+                                <option value="">厦门</option>
+                                <option value="">上海</option>
+                                <option value="">按月</option>
+                            </select></dd>
+                    </dl>
+                    <dl>
+                       <dt><label for="comments"> 选择生成方式:</label></dt>
+                        <dd><select size="1" name="gender" id="">
+                                <option value="">按年</option>
+                                <option value="">按季度</option>
+                                <option value="">按月</option>
+                            </select></dd>
+                    </dl>
+					 <dl>
+                        <dt>
+                          <label for="comments">选择时间</label>
+                        </dt>
+                        <dd> <select size="1" name="gender" id="">
+                                <option value="">1992</option>
+                                <option value="">1993</option>
+                                <option value="">1994</option>
+                                <option value="">Select option 4</option>
+                                <option value="">Select option 5</option>
+                            </select>
+							</dd>
+                    </dl>
+					 <dl>
+                       <dt><label for="comments"> 选择报表种类:</label></dt>
+                        <dd><select size="1" name="gender" id="">
+                                <option value="">收货报表</option>
+                                <option value="">发货报表</option>
+                                <option value="">收发货报表</option>
+                            </select></dd>
+                    </dl>
+					
+                  
+                     <dl class="submit">
+				
+                    <a href="subReportInfo.html" class="bt_blue"><span class="bt_red_lft"></span><strong>确定</strong><span class="bt_blue_r"></span></a>
+				
+                     </dl>
+                     
+                     
+                    
+                </fieldset>
+         </form>
+         </div>  
+     
+     </div><!-- end of right content-->
+            
+                    
+  </div>   <!--end of center content -->               
+                    
+                    
+    
+    
+    <div class="clear"></div>
+    </div> <!--end of main content-->
+	
+    
+   <div class="footer">
+    
+    	<div class="left_footer">IN ADMIN PANEL | Powered by <a href="http://spy.com">SPY<br />
+<br />
+<br />
+</a></div>
+    	<div class="right_footer"><a href="http://indeziner.com"><img src="images/admin_logo.gif" alt="" title="" border="0" /></a></div>
+    
+    </div>
+
+</div>		
+</body>
+</html>

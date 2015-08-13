@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="vehicle" extends="struts-default" namespace="/backStage">
+		<action name="showAllVehicle" class="vehicleAction" method="showAllVehicle">
+			<result name="success">carInfo.jsp</result>
+		</action>
+
+		<action name="showVehicle" class="vehicleAction" method="showVehicle">
+			<result name="success">alterCarInfo.jsp</result>
+		</action>
+
+		<action name="updateVehicle" class="vehicleAction" method="updateVehicle">
+			<result name="success" type="redirectAction">
+				<param name="actionName">searchVehicle</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+
+		<action name="newVehicle" class="vehicleAction" method="newVehicle">
+			<result name="success">addCarInfo.jsp</result>
+		</action>
+
+		<action name="addVehicle" class="vehicleAction" method="addVehicle">
+			<result name="success" type="redirectAction">
+				<param name="actionName">searchVehicle</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+
+		<action name="deleteVehicle" class="vehicleAction" method="deleteVehicle">
+			<result name="success" type="redirectAction">
+				<param name="actionName">searchVehicle</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+		<action name="deleteMultiVehicle" class="vehicleAction" method="deleteMultiVehicle">
+			<result name="success" type="redirectAction">
+				<param name="actionName">searchVehicle</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+		<action name="searchVehicle" class="vehicleAction" method="searchVehicle">
+			<result name="success">carInfo.jsp</result>
+		</action>
+		
+		<action name="showVehicleCurrentPage" class="vehicleAction" method="showCurrentPage">
+			<result name="success">carInfo.jsp</result>
+		</action>
+		
+		<action name="flashVehicleSearchCondition" class="vehicleAction" method="flashSearchCondition">
+			<result name="success" type="redirectAction">
+				<param name="actionName">searchVehicle</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+		<action name="dispatchMultiVehicle" class="vehicleAction" method="dispatchMultiVehicle">
+			<result name="success" type="redirectAction">
+				<param name="actionName">searchVehicle</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		<action name="arriveMultiVehicle" class="vehicleAction" method="arriveMultiVehicle">
+			<result name="success" type="redirectAction">
+				<param name="actionName">searchVehicle</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+	</package>
+	
+	<package name="receipt" extends="struts-default" namespace="/backStage">
+	
+		<action name="showAllReceipt" class="receiptAction" method="showAllReceipt">
+			<result name="success">receiptInfo.jsp</result>
+		</action>
+		
+		<action name="showReceiptCurrentPage" class="receiptAction" method="showCurrentPage">
+			<result name="success">receiptInfo.jsp</result>
+		</action>
+		
+		<action name="deleteReceipt" class="receiptAction" method="deleteReceipt">
+			<result name="success" type="redirectAction">
+				<param name="actionName">searchReceipt</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+		<action name="deleteMultiReceipt" class="receiptAction" method="deleteMultiReceipt">
+			<result name="success" type="redirectAction">
+				<param name="actionName">searchReceipt</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+		<action name="searchReceipt" class="receiptAction" method="searchReceipt">
+			<result name="success">receiptInfo.jsp</result>
+		</action>
+		
+		<action name="selectSourceAndDest" class="receiptAction" method="selectSourceAndDest">
+			<result name="success">newReceipt1.jsp</result>
+		</action>
+		
+		<action name="selectOrderAndVehicle" class="receiptAction" method="selectOrderAndVehicle">
+			<result name="success">newReceipt2.jsp</result>
+		</action>
+		
+		<action name="showReceiptOrderCurrentPage" class="receiptAction" method="showOrderCurrentPage">
+			<result name="success">newReceipt2.jsp</result>
+		</action>
+		
+		<action name="showReceiptVehicleCurrentPage" class="receiptAction" method="showVehicleCurrentPage">
+			<result name="success">newReceipt2.jsp</result>
+		</action>
+		
+		<action name="selectCarrierAndRecipient" class="receiptAction" method="selectCarrierAndRecipient">
+			<result name="success">newReceipt3.jsp</result>
+		</action>
+		
+		<action name="createReceipt" class="receiptAction" method="createReceipt">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAllReceipt</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+		<action name="flashReceiptSearchCondition" class="receiptAction" method="flashSearchCondition">
+			<result name="success" type="redirectAction">
+				<param name="actionName">searchReceipt</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+		<action name="arriveMultiReceipt" class="receiptAction" method="arriveMultiReceipt">
+			<result name="success" type="redirectAction">
+				<param name="actionName">searchReceipt</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+		<action name="showReceipt" class="receiptAction" method="showReceipt">
+			<result name="success">alterReceipt.jsp</result>
+		</action>
+	</package>
+
+	<package name="role" extends="struts-default" namespace="/backStage">
+	
+		<action name="showAllRole" class="roleAction" method="showAllRole">
+			<result name="success">roleInfo.jsp</result>
+		</action>
+		
+		<action name="deleteMultiRole" class="roleAction" method="deleteMultiRole">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAllRole</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+		<action name="showRoleCurrentPage" class="roleAction" method="showCurrentPage">
+			<result name="success">roleInfo.jsp</result>
+		</action>
+		
+		<action name="deleteRole" class="roleAction" method="deleteRole">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAllRole</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+		<action name="showRole" class="roleAction" method="showRole">
+			<result name="success">roleManagement.jsp</result>
+		</action>
+
+		<action name="newRole" class="roleAction" method="newRole">
+			<result name="success">addRole.jsp</result>
+		</action>
+		
+		<action name="updateRole" class="roleAction" method="updateRole">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAllRole</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+		<action name="addRole" class="roleAction" method="addRole">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAllRole</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+
+		<action name="searchRole" class="roleAction" method="searchRole">
+			<result name="success">roleInfo.jsp</result>
+		</action>
+		
+		<action name="flashRoleSearchCondition" class="roleAction" method="flashRoleSearchCondition">
+			<result name="success" type="redirectAction">
+				<param name="actionName">searchRole</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		
+	</package>
+
+	<!--
+		<action name="*user" class="com.etc.action.SimpleAction" method="{1}"
+		> <result name="success">../welcome.jsp</result> <result
+		name="loginsuccess" type="redirectAction"><param
+		name="actionName">showAlluser</param></result> </action>
+	-->
+</struts>    
+

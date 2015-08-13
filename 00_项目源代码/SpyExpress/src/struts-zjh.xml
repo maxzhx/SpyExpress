@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="Report" extends="struts-default" namespace="/backStage">
+		<action name="showAllReportForHead" class="reportAction"
+			method="showAllReportForHead">
+			<result name="success">reportInfo.jsp</result>
+		</action>
+		<action name="showReportItemForHead" class="reportAction"
+			method="showReportItemForHead">
+			<result name="success">detailReportInfo.jsp</result>
+		</action>
+		<action name="showAllReportForSub" class="reportAction" method="showAllReportForSub">
+			<result name="success">subReportInfo.jsp</result>
+		</action>
+		<action name="showReportItemForSub" class="reportAction"
+			method="showReportItemForSub">
+			<result name="success">detailSubReportInfo.jsp</result>
+		</action>
+		<action name="addReportForHead" class="reportAction" method="addReportForHead">
+			<result name="success">newReport.jsp</result>
+		</action>
+		<action name="submitAddForHead" class="reportAction" method="submitAddForHead">
+			<result name="success">detailReportInfo.jsp</result>
+		</action>
+		<action name="addReportForSub" class="reportAction" method="addReportForSub">
+			<result name="success">newSubReport.jsp</result>
+		</action>
+		<action name="submitAddForSub" class="reportAction" method="submitAddForSub">
+			<result name="success">detailSubReportInfo.jsp</result>
+		</action>
+		<action name="searchReportForHead" class="reportAction" method="searchReportForHead">
+			<result name="success">
+				reportInfo.jsp
+			</result>
+			<result name="fail" type="redirectAction">
+				<param name="actionName">showAllReportForHead</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		<action name="searchReportForSub" class="reportAction" method="searchReportForSub">
+			<result name="success">
+				subReportInfo.jsp
+			</result>
+			<result name="fail" type="redirectAction">
+				<param name="actionName">showAllReportForSub</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		<action name="showReportCurrentPage" class="reportAction"
+			method="showCurrentPage">
+			<result name="success">
+				reportInfo.jsp
+			</result>
+		</action>
+
+		<action name="showReportSubCurrentPage" class="reportAction"
+			method="showCurrentPage">
+			<result name="success">
+				subReportInfo.jsp
+			</result>
+		</action>
+		
+		<action name="showDetailSubCurrentPage" class="reportAction"
+			method="showCurrentPage">
+			<result name="success">
+				detailSubReportInfo.jsp
+			</result>
+		</action>
+		
+		<!-- 重定向 , 考虑用模板*-->
+		<action name="*ForHead" class="reportAction" method="{1}ForHead">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAllReportForHead</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+		<action name="*ForSub" class="reportAction" method="{1}ForSub">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAllReportForSub</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+
+	</package>
+
+
+</struts>    
+

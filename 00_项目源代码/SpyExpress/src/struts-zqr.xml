@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="station"  extends="struts-default" namespace="/backStage">
+<action name="showAllStation"  class="stationAction" method="showAllStation">
+<result name="success">stationInfo.jsp</result>
+</action>
+
+<action name="deleteStation"  class="stationAction" method="deleteStation">
+<result name="success" type="redirectAction">
+<param name="actionName">showStationByID</param>
+<param name="namespace">/backStage</param>
+</result>
+</action>
+
+<action name="newStation"  class="stationAction" method="newStation">
+<result name="success">addStationInfo.jsp</result>
+</action>
+
+<action name="addStation"  class="stationAction" method="addStation">
+<result name="success" type="redirectAction">>
+<param name="actionName">showStationByID</param>
+<param name="namespace">/backStage</param></result>
+</action>
+
+
+<action name="showStation" class="stationAction" method="showStation">
+	<result name="success">alterStationInfo.jsp</result>
+</action>
+
+<action name="updateStation" class="stationAction" method="updateStation">
+	<result name="success" type="redirectAction">
+		<param name="actionName">showStationByID</param>
+		<param name="namespace">/backStage</param>
+	</result>
+</action>
+
+<action name="deleteMultiStation"  class="stationAction" method="deleteMultiStation">
+<result name="success" type="redirectAction">
+<param name="actionName">showStationByID</param>
+<param name="namespace">/backStage</param></result>
+</action>
+
+<action name="showStationByID"  class="stationAction" method="showStationByID">
+<result name="success">stationInfo.jsp</result>
+</action>
+
+<action name="showStationCurrentPage"  class="stationAction" method="showCurrentPage">
+<result name="success">stationInfo.jsp</result>
+</action>
+
+<action name="flashStationSearchCondition" class="stationAction" method="flashSearchCondition">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showStationByID</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+
+</package>
+<package name="scope"  extends="struts-default" namespace="/backStage">
+   <action name="showAllScope" class="scopeAction" method="showAllScope">
+   <result name="success">scopeInfo.jsp</result>
+</action>
+
+<action name="newScope"  class="scopeAction" method="newScope">
+<result name="success">addScope.jsp</result>
+</action>
+
+<action name="addScope"  class="scopeAction" method="addScope">
+<result name="success" type="redirectAction">>
+<param name="actionName">showScopeBySourceAndDest</param>
+<param name="namespace">/backStage</param></result>
+</action>
+
+<action name="showScope" class="scopeAction" method="showScope">
+	<result name="success">alterScopeInfo.jsp</result>
+</action>
+
+<action name="updateScope"  class="scopeAction" method="updateScope">
+<result name="success" type="redirectAction">>
+<param name="actionName">showScopeBySourceAndDest</param>
+<param name="namespace">/backStage</param></result>
+</action>
+
+<action name="deleteScope"  class="scopeAction" method="deleteScope">
+<result name="success" type="redirectAction">>
+<param name="actionName">showScopeBySourceAndDest</param>
+<param name="namespace">/backStage</param></result>
+</action>
+
+<action name="deleteMultiScope"  class="scopeAction" method="deleteMultiScope">
+<result name="success" type="redirectAction">
+<param name="actionName">showScopeBySourceAndDest</param>
+<param name="namespace">/backStage</param></result>
+</action>
+
+
+<action name="showScopeBySourceAndDest"  class="scopeAction" method="showScopeBySourceAndDest">
+<result name="success">scopeInfo.jsp</result>
+</action>
+
+<action name="showScopeCurrentPage"  class="scopeAction" method="showCurrentPage">
+<result name="success">scopeInfo.jsp</result>
+</action>
+
+<action name="flashScopeSearchCondition" class="scopeAction" method="flashSearchCondition">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showScopeBySourceAndDest</param>
+				<param name="namespace">/backStage</param>
+			</result>
+		</action>
+
+</package>
+
+<package name="order"  extends="struts-default" namespace="/backStage">
+
+<action name="showAllOrder" class="orderAction" method="showAllOrder">
+   <result name="success">orderInfo.jsp</result>
+</action>
+
+<action name="showOrderCurrentPage"  class="orderAction" method="showCurrentPage">
+<result name="success">orderInfo.jsp</result>
+</action>
+
+<action name="deleteOrder"  class="orderAction" method="deleteOrder">
+<result name="success" type="redirectAction">>
+<param name="actionName">searchOrder</param>
+<param name="namespace">/backStage</param></result>
+</action>
+
+<action name="deleteMultiOrder"  class="orderAction" method="deleteMultiOrder">
+<result name="success" type="redirectAction">>
+<param name="actionName">searchOrder</param>
+<param name="namespace">/backStage</param></result>
+</action>
+
+<action name="backnewOrder"  class="orderAction" method="backnewOrder">
+<result name="success">newOrder.jsp</result>
+</action>
+
+<action name="backaddOrder"  class="orderAction" method="backaddOrder">
+<result name="success" type="redirectAction">
+<param name="actionName">searchOrder</param>
+<param name="namespace">/backStage</param></result>
+</action>
+
+<action name="showOrder" class="orderAction" method="showOrder">
+	<result name="success">alterOrder.jsp</result>
+</action>
+
+<action name="searchOrder" class="orderAction" method="searchOrder">
+<result name="success">orderInfo.jsp</result>
+</action>
+
+<action name="comfirmMultiOrder" class="orderAction" method="comfirmMultiOrder">
+<result name="success" type="redirectAction">>
+<param name="actionName">searchOrder</param>
+<param name="namespace">/backStage</param></result>
+</action>
+
+<action name="flashSearchCondition" class="orderAction" method="flashSearchCondition">
+<result name="success" type="redirectAction">
+<param name="actionName">searchOrder</param>
+<param name="namespace">/backStage</param></result>
+</action>
+
+</package>
+
+<package name="frontorder"  extends="struts-default" namespace="/frontStage">
+<action name="frontnewOrder"  class="orderAction" method="frontnewOrder">
+<result name="success">createOrder.jsp</result>
+</action>
+
+<action name="frontaddOrder"  class="orderAction" method="frontaddOrder">
+<result name="success">orderSuccess.jsp</result>
+</action>
+
+<action name="showOrderWhenAddOrder"  class="orderAction" method="showOrderWhenAddOrder">
+<result name="success">orderDetails.jsp</result>
+</action>
+
+
+<action name="findOrderByID"  class="orderAction" method="findOrderByID">
+<result name="success">orderResult.jsp</result>
+</action>
+
+<action name="findOrderByCustomer"  class="orderAction" method="findOrderByCustomer">
+<result name="success">orderManagement.jsp</result>
+</action>
+
+<action name="showOrderCurrentPage"  class="orderAction" method="showCurrentPage">
+<result name="success">orderManagement.jsp</result>
+</action>
+
+<action name="showOrderfront"  class="orderAction" method="showOrderfront">
+<result name="success">orderDetails.jsp</result>
+</action>
+
+
+<action name="searchOrder" class="orderAction" method="searchOrder">
+<result name="success">orderManagement.jsp</result>
+</action>
+
+<action name="deleteFrontOrder" class="orderAction" method="deleteFrontOrder">
+<result name="success" type="redirectAction">
+<param name="actionName">searchOrder</param>
+<param name="namespace">/frontStage</param></result>
+</action>
+
+<action name="flashSearchCondition" class="orderAction" method="flashSearchCondition">
+<result name="success" type="redirectAction">
+<param name="actionName">searchOrder</param>
+<param name="namespace">/frontStage</param></result>
+</action>
+
+<action name="showOrder" class="orderAction" method="showOrder">
+	<result name="success">orderDetails.jsp</result>
+</action>
+
+<action name="changestatus" class="orderAction" method="changestatus">
+	<result name="success">orderManagement.jsp</result>
+</action>
+
+<action name="checkOrder" class="orderAction" method="changestatus">
+<result name="success">checkOrderform.jsp</result>
+</action>
+
+</package>
+</struts>

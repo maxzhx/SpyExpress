@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+
+<package name="admin" extends="struts-default" namespace="/backStage">
+    <action name="adminLogin" class="userAction" method="adminLogin">
+    	<result name="success">index.jsp</result>
+    	<result name="fail">login.jsp</result>
+	</action>
+	<action name="showAllAdmin" class="userAction" method="showAllAdmin">
+		<result name="success">adminInfo.jsp</result>
+	</action>
+	<action name="deleteAdmin" class="userAction" method="deleteAdmin">
+		<result name="success" type="redirectAction">
+		<param name="actionName">showAllAdmin</param>
+		<param name="namespace">/backStage</param>
+		</result>
+	</action>
+	<action name="deleteMultiAdmin" class="userAction" method="deleteMultiAdmin">
+		<result name="success" type="redirectAction">
+		<param name="actionName">showAllAdmin</param>
+		<param name="namespace">/backStage</param>
+		</result>
+		<result name="fail" type="redirectAction">
+		<param name="actionName">showAllAdmin</param>
+		<param name="namespace">/backStage</param>
+		</result>
+	</action>
+	<action name="addAdmin" class="userAction" method="addAdmin">
+		<result name="success" type="redirectAction">
+		<param name="actionName">showAllAdmin</param>
+		<param name="namespace">/backStage</param>
+		</result>
+	</action>
+	<action name="showAddAdmin" class="userAction" method="showAddAdmin">
+		<result name="success">
+			addAdmin.jsp
+		</result>
+	</action>
+	<action name="updateAdmin" class="userAction" method="updateAdmin">
+		<result name="success" type="redirectAction">
+			<param name="actionName">showAllAdmin</param>
+			<param name="namespace">/backStage</param>
+		</result>
+	</action>
+	<action name="showUpdateAdmin" class="userAction" method="showUpdateAdmin">
+		<result name="success">alterAdmin.jsp</result>
+	</action>
+	<action name="showAdmin" class="userAction" method="showAdmin">
+		<result name="success">detailAdminInfo.jsp</result>
+	</action>
+	<action name="showAdminReturn" class="userAction" method="showAdminReturn">
+		<result name="success">adminInfo.jsp</result>
+	</action>
+	<action name="searchAdmin" class="userAction" method="searchAdmin">
+		<result name="success">
+			adminInfo.jsp
+		</result>
+		<result name="fail" >
+		 	adminInfo.jsp
+		</result>
+	</action>
+	<action name="adminCurrentPage" class="userAction" method="adminCurrentPage" >
+		<result name="success">
+			adminInfo.jsp
+		</result>
+	</action>
+</package>
+<package name="customer_back" extends="struts-default" namespace="/backStage">
+	<action name="showAllCustomer" class="userAction" method="showAllCustomer">
+		<result>customerInfo.jsp</result>
+	</action>
+	<action name="showAddCustomer" class="userAction" method="showAddCustomer">
+		<result>addCustomer.jsp</result>
+	</action>
+	<action name="addCustomer" class="userAction" method="addCustomer">
+		<result name="success" type="redirectAction">
+		<param name="actionName">showAllCustomer</param>
+		<param name="namespace">/backStage</param>
+		</result>
+	</action>
+	<action name="deleteCustomer" class="userAction" method="deleteCustomer">
+		<result name="success" type="redirectAction">
+		<param name="actionName">showAllCustomer</param>
+		<param name="namespace">/backStage</param>
+		</result>
+	</action>
+	<action name="deleteMultiCustomer" class="userAction" method="deleteMultiCustomer">
+		<result name="success" type="redirectAction">
+		<param name="actionName">showAllCustomer</param>
+		<param name="namespace">/backStage</param>
+		</result>
+	</action>
+	<action name="showUpadateCustomer" class="userAction" method="showUpadateCustomer">
+		<result name="success">
+			alterCustomer.jsp
+		</result>
+	</action>
+	<action name="updateCustomer" class="userAction" method="updateCustomer">
+		<result name="success" type="redirectAction">
+		<param name="actionName">showAllCustomer</param>
+		<param name="namespace">/backStage</param>
+		</result>
+	</action>
+	<action name="updateBackCustomer" class="userAction" method="updateBackCustomer">
+		<result name="success" type="redirectAction">
+		<param name="actionName">showAllCustomer</param>
+		<param name="namespace">/backStage</param>
+		</result>
+	</action>
+	<action name="searchCustomer" class="userAction" method="searchCustomer">
+		<result name="success">
+			customerInfo.jsp
+		</result>
+		<result name="fail" >
+			customerInfo.jsp
+		</result>
+	</action>
+	<action name="showCustomer" class="userAction" method="showCustomer">
+		<result name="success">
+			detailCustomerInfo.jsp
+		</result>
+	</action>
+	<action name="cancelAdmin" class="userAction" method="cancelAdmin">
+		<result name="success">
+			adminInfo.jsp
+		</result>
+	</action>
+	<action name="cancelCustomer" class="userAction" method="cancelCustomer">
+		<result name="success">
+			customerInfo.jsp
+		</result>
+	</action>
+	<action name="customerCurrentPage" class="userAction" method="customerCurrentPage">
+		<result name="success">
+			customerInfo.jsp
+		</result>
+	</action>
+		<action name="backLogout" class="userAction" method="logout">
+	  <result name="success">login.jsp</result>
+	</action>
+</package>
+<package name="customer_front" extends="struts-default" namespace="/frontStage">
+	<action name="customerLogin" class="userAction" method="customerLogin">
+		<result name="success">index.jsp</result>
+		<result name="fail">login.jsp</result>
+	</action>
+	<action name="showFrontInfo" class="userAction" method="showFrontInfo">
+		<result name="success">userInfo.jsp</result>
+	</action>
+	<action name="updateCustomer" class="userAction" method="updateCustomer">
+		<result name="success" type="redirectAction">
+			<param name="actionName">showFrontInfo</param>
+			<param name="namespace">/frontStage</param>
+		</result>
+		<result name="fail" type="redirectAction">
+			<param name="actionName">showFrontInfo</param>
+			<param name="namespace">/frontStage</param>
+		</result>
+	</action>
+	<action name="logout" class="userAction" method="logout">
+	  <result name="success">login.jsp</result>
+	</action>
+</package>
+</struts>   
+ 

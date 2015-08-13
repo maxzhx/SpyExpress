@@ -1,0 +1,4 @@
+username:spy
+password:spy
+IP: 192.168.2.80  (可能会变..)
+SID: orcl

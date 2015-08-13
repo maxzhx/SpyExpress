@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IN ADMIN PANEL | Powered by INDEZINER</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="clockp.js"></script>
+<script type="text/javascript" src="clockh.js"></script> 
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="ddaccordion.js"></script>
+<script type="text/javascript">
+ddaccordion.init({
+	headerclass: "submenuheader", //Shared CSS class name of headers group
+	contentclass: "submenu", //Shared CSS class name of contents group
+	revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+	mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
+	defaultexpanded: [], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+	onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: true, //persist state of opened contents within browser session?
+	toggleclass: ["", ""], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["suffix", "<img src='images/plus.gif' class='statusicon' />", "<img src='images/minus.gif' class='statusicon' />"], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+	oninit:function(headers, expandedindices){ //custom code to run when headers have initalized
+		//do nothing
+	},
+	onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed
+		//do nothing
+	}
+})
+</script>
+
+<script type="text/javascript" src="jconfirmaction.jquery.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+		$('.ask').jConfirmAction();
+	});
+	
+</script>
+
+<script language="javascript" type="text/javascript" src="niceforms.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="niceforms-default.css" /></head>
+<body>
+<div id="main_container">
+
+	<div class="header">
+    <div class="logo"><a href="#"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>
+    
+    <div class="right_header">欢迎 Admin, <a href="#">Visit site</a> | <a href="#" class="messages">(3) 消息</a> | <a href="login.html" class="logout" >退出</a></div>
+    <div id="clock_a"></div>
+    </div>
+    
+    <div class="main_content">
+    
+                    <div class="menu">
+                    <ul>
+                    <li><a class="current" href="index.html">首页</a></li>
+                    <li><a href="orderManagement.html">订单管理<!--[if IE 7]><!--></a><!--<![endif]-->        
+                    </li>
+                    <li><a href="user.html">账号管理<!--[if IE 7]><!--></a><!--<![endif]-->
+                    </li>              
+                    <li><a href="contactUs.html">联系我们</a></li>
+                    </ul>
+                    </div> 
+                    
+                    
+                    
+                    
+    <div class="center_content">  
+    
+    
+    
+    <div class="left_content">
+    
+    		<div class="sidebar_search">
+            <form>
+            <input type="text" name="" class="search_input" value="search keyword" onclick="this.value=''" />
+            <input type="image" class="search_submit" src="images/search.png" />
+            </form>            
+            </div>
+    
+            <div class="sidebarmenu">
+            
+                
+               
+               <a class="menuitem" href="createOrder.html">快速下单</a>
+                
+                <a class="menuitem_green" href="checkOrderform.html">查询订单</a>
+                
+                <a class="menuitem_red" href="about.html">关于</a>
+                    
+            </div>
+            
+          
+            
+            <div class="sidebar_box">
+                <div class="sidebar_box_top"></div>
+                <div class="sidebar_box_content">
+                <h4>物流系统</h4>
+                <img src="images/notice.png" alt="" title="" class="sidebar_icon_right" />
+                <p>SPY组倾心设计烟草物流管理系统</p>                
+                </div>
+                <div class="sidebar_box_bottom"></div>
+            </div>
+            
+            <div class="sidebar_box">
+                <div class="sidebar_box_top"></div>
+                <div class="sidebar_box_content">
+                <h5>联系我们</h5>
+                <img src="images/photo.png" alt="" title="" class="sidebar_icon_right" />
+                <p>
+电话：888888888</p>
+                <p>qq：99999</p>
+                <p>传真：77777</p>
+                </div>
+                <div class="sidebar_box_bottom"></div>
+            </div>  
+            
+ 
+    </div>  
+    
+    <div class="right_content">  
+	<h2>关于我们</h2>          
+         <div class="valid_box">
+           <p>目前，我国企业已在探索物流信息化建设的道路上取得了一定成就。然而，总体而言我国的信息化建设还处在初级阶段，还存在着如物流企业信息化程度低，基础信息和公共物流信息平台发展缓慢，物流信息化的发展战略欠缺等问题。文章从物流信息分析入手，对物流信息化的基本概念做了界定。对比研究了国内外物流企业构建物流信息化的文献，然后具体分析了我国物流信息化建设中存在的问题，并针对这些问题提出了解决问题的措施。          </p>
+           <p> 现代物流的根本宗旨是提高物流效率，降低物流成本，满足客户需求。并越来越呈现出信息化，网络化，自动化，智能化，标准化等发展趋势，其中信息化是现代物流的核心。在物流信息化体系建设的过程中，存在着大量的物流信息及其相关信息，这些物流信息资源是企业最重要的资源之一。</p>
+           <p> 在今天的网络与知识经济时代里，竞争的日益白热化要求企业对自身的管理和市场要求做出快速反应，而建立现代物流信息化体系是其中的重要方面。</p>
+           <p>  在这种背景下，对企业构建物流信息体系的研究显得很有必要。 </p>
+        </div>
+   
+    </div>
+    <!-- end of right content-->
+            
+                    
+  </div>   <!--end of center content -->               
+                    
+                    
+    
+    
+    <div class="clear"></div>
+    </div> <!--end of main content-->
+	
+    
+    <div class="footer">
+    
+    	<div class="left_footer">IN ADMIN PANEL | Powered by <a href="http://indeziner.com">INDEZINER</a></div>
+    	<div class="right_footer"><a href="http://indeziner.com"><img src="images/indeziner_logo.gif" alt="" title="" border="0" /></a></div>
+    
+    </div>
+
+</div>		
+</body>
+</html>

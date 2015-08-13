@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+	<table name="TAB_ADMIN" schema="SPY" class="com.spy.entity.Admin">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<key-column name="ID" type="java.lang.Integer" />
+		</primary-key>
+		<column name="ROLE_ID"></column>
+		<column name="STATION_ID"></column>
+	</table>
+	<table name="TAB_CUSTOMER" schema="SPY"
+		class="com.spy.entity.Customer">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<key-column name="ID" type="java.lang.Integer" />
+		</primary-key>
+	</table>
+	<table name="TAB_GOODS" schema="SPY" class="com.spy.entity.Goods">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<key-column name="ID" type="java.lang.Integer" />
+		</primary-key>
+		<column name="ORDER_ID" type="java.lang.Integer"></column>
+	</table>
+	<table name="TAB_ORDER" schema="SPY" class="com.spy.entity.Order">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<key-column name="ID" type="java.lang.Integer" />
+		</primary-key>
+		<column name="STATUS" type="java.lang.Integer"></column>
+	</table>
+	<table name="TAB_RECEIPT" schema="SPY"
+		class="com.spy.entity.Receipt">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<key-column name="ID" type="java.lang.Integer" />
+		</primary-key>
+	</table>
+	<table name="TAB_ROLE" schema="SPY" class="com.spy.entity.Role">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<key-column name="ID" type="java.lang.Integer" />
+		</primary-key>
+		<column name="VEHICLE" type="java.lang.Integer"></column>
+		<column name="STATION" type="java.lang.Integer"></column>
+		<column name="SCOPE" type="java.lang.Integer"></column>
+		<column name="RECEIPT" type="java.lang.Integer"></column>
+		<column name="ORDERS" type="java.lang.Integer"></column>
+		<column name="REPORT" type="java.lang.Integer"></column>
+		<column name="USERS" type="java.lang.Integer"></column>
+	</table>
+	<table name="TAB_SCOPE" schema="SPY" class="com.spy.entity.Scope">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<key-column name="ID" type="java.lang.Integer" />
+		</primary-key>
+	</table>
+	<table name="TAB_STATION" schema="SPY"
+		class="com.spy.entity.Station">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<key-column name="ID" type="java.lang.Integer" />
+		</primary-key>
+	</table>
+	<table name="TAB_VEHICLE" schema="SPY"
+		class="com.spy.entity.Vehicle">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<key-column name="ID" type="java.lang.Integer" />
+		</primary-key>
+	</table>
+	<table name="TAB_ORDER_RECEIPT" schema="SPY"
+		class="com.spy.entity.Order_Receipt">
+		<primary-key>
+			<generator class="sequence"></generator>
+			<key-column name="ID" type="java.lang.Integer" />
+		</primary-key>
+		<column name="ORDER_ID"></column>
+		<column name="RECEIPT_ID"></column>
+		<column name="STATUS" type="java.lang.Integer"></column>
+	</table>
+	<table name="TAB_REPORT" schema="SPY"
+		class="com.spy.entity.Report">
+		<primary-key>
+			<generator class="assigned"></generator>
+			<key-column name="VIEW_NAME" type="java.lang.String" />
+		</primary-key>
+	</table>
+
+	<table name="V_STA9002_RECV_13_06" schema="SPY"
+		class="com.spy.entity.ReportSTA">
+	</table>
+</hibernate-reverse-engineering>
